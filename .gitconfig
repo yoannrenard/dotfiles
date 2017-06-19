@@ -21,13 +21,11 @@
     lg      = log --graph --pretty=tformat:'%Cred%h%Creset -%C(yellow)%d%Creset%s %Cgreen(%an %cr)%Creset' --abbrev-commit --date=relative
     ll      = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
     authors = shortlog -sn --no-merges
-    fetch   = fetch -p
-    mepv3   = !git lg $(ssh comtools1.prod.par-1.h.blbl.cr. cat /space/products/comuto3/prod/SHA1)..origin/master
     brd     = !git branch --merged | grep -v master | xargs git branch -d
     wip     = !git add -A && git ci -m 'WIP'
     pr      = !sh -c 'stash pull-request $0 master'
     rsup    = !git fetch upstream && git reset --hard upstream/master
-    gitlog  = log --graph --pretty=format:'%C(bold white)%h%Creset -%C(bold yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset' --abbrev-commit --branches
+    logx    = log --graph --pretty=format:'%C(bold white)%h%Creset -%C(bold yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset' --abbrev-commit --branches
 [color]
     branch = auto
     diff = auto
@@ -38,6 +36,7 @@
 [diff]
     wordRegex = .
     compactionHeuristic = true
+    indentHeuristic = on
 [log]
     abbrevCommit = true
 [rebase]
