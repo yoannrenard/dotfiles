@@ -37,6 +37,7 @@
     default = current
 [diff]
     wordRegex = .
+    compactionHeuristic = true
 [log]
     abbrevCommit = true
 [rebase]
