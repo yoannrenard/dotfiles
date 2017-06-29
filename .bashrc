@@ -5,6 +5,8 @@
 # Set Git language to English
 # alias git='LANG=en_US git'
 # alias git='LC_ALL=en_US git'
+alias git-clean-local='git fetch -p origin && git co master && git br --merged | grep -v master | sed -e "s/.*  //g" | xargs -n 1 git br -d'
+alias git-clean-origin='git fetch -p origin && git co master && git br -r --merged | grep -v master | sed -e "s/.*  origin\///g" | xargs -n 1 git push origin --delete'
  
 #:source ~/.git-prompt.sh
 #  Customize BASH PS1 prompt to show current GIT repository and branch.
