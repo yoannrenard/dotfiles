@@ -1,3 +1,5 @@
+# Symfony
+alias sf="php $(find . -maxdepth 2 -mindepth 1 -name 'console' -type f | head -n 1)"
 
 
 # git
