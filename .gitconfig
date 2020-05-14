@@ -10,6 +10,7 @@
 [alias]
     ci      = commit
     di      = diff
+    difc    = diff --word-diff=color
     sdi     = diff --staged
     st      = status
     sta     = stash
