@@ -13,6 +13,7 @@ install:          ## Install env
 	ln -s $(PWD)/.gitconfig ~/.gitconfig
 	ln -s $(PWD)/.gitignore ~/.gitignore
 	cat $(PWD)/.bashrc >> ~/.bashrc
+	source ~/.bashrc
 
 install_bat:      ## Install bat
 	wget https://github.com/sharkdp/bat/releases/download/v0.15.0/bat_0.15.0_amd64.deb
