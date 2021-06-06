@@ -1,50 +1,50 @@
 [user]
-    name = Yoann Renard
-    email = renard.yoann@gmail.com
+	name = Yoann Renard
+	email = renard.yoann@gmail.com
 [core]
-    autocrlf = input
-    editor = vim
-    excludesfile = ~/.gitignore
+	autocrlf = input
+	editor = vim
+	excludesfile = ~/.gitignore
 [http]
-    sslVerify = false
+	sslVerify = false
 [alias]
-    ci      = commit
-    di      = diff
-    difc    = diff --word-diff=color
-    sdi     = diff --staged
-    st      = status
-    sta     = stash
-    br      = branch
-    co      = checkout
-    cp      = cherry-pick
-    cat     = cat-file -p
-    lga     = log --graph --pretty=tformat:'%Cred%h%Creset -%C(yellow)%d%Creset%s %Cgreen(%an %cd)%Creset' --abbrev-commit --date=short
-    lg      = log --graph --pretty=tformat:'%Cred%h%Creset -%C(yellow)%d%Creset%s %Cgreen(%an %cr)%Creset' --abbrev-commit --date=relative
-    ll      = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
-    authors = shortlog -sn --no-merges
-    brd     = !git branch --merged | grep -v master | xargs git branch -d
-    wip     = !git add -A && git ci -m 'WIP'
-    pr      = !sh -c 'stash pull-request $0 master'
-    rsup    = !git fetch upstream && git reset --hard upstream/master
-    logx    = log --graph --pretty=format:'%C(bold white)%h%Creset -%C(bold yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset' --abbrev-commit --branches
+	ci      = commit
+	di      = diff
+	difc    = diff --word-diff=color
+	sdi     = diff --staged
+	st      = status
+	sta     = stash
+	br      = branch
+	co      = checkout
+	cp      = cherry-pick
+	cat     = cat-file -p
+	lga     = log --graph --pretty=tformat:'%Cred%h%Creset -%C(yellow)%d%Creset%s %Cgreen(%an %cd)%Creset' --abbrev-commit --date=short
+	lg      = log --graph --pretty=tformat:'%Cred%h%Creset -%C(yellow)%d%Creset%s %Cgreen(%an %cr)%Creset' --abbrev-commit --date=relative
+	ll      = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+	authors = shortlog -sn --no-merges
+	brd     = !git branch --merged | grep -v master | xargs git branch -d
+	wip     = !git add -A && git ci -m 'WIP'
+	pr      = !sh -c 'stash pull-request $0 master'
+	rsup    = !git fetch upstream && git reset --hard upstream/master
+	logx    = log --graph --pretty=format:'%C(bold white)%h%Creset -%C(bold yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset' --abbrev-commit --branches
 [color]
-    branch = auto
-    diff = auto
-    interactive = auto
-    status = auto
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
 [push]
-    default = current
+	default = current
 [diff]
-    wordRegex = .
-    compactionHeuristic = true
-    indentHeuristic = on
+	wordRegex = .
+	compactionHeuristic = true
+	indentHeuristic = on
 [log]
-    abbrevCommit = true
+	abbrevCommit = true
 [rebase]
-    autosquash = true
-    autostash = true
+	autosquash = true
+	autostash = true
 [help]
-    autocorrect = 1
+	autocorrect = 1
 
 ; [includeIf "gitdir:~/workspace/vallourec/"]
 ;     path = ~/workspace/vallourec/.gitconfig
