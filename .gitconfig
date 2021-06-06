@@ -45,3 +45,6 @@
     autostash = true
 [help]
     autocorrect = 1
+
+; [includeIf "gitdir:~/workspace/vallourec/"]
+;     path = ~/workspace/vallourec/.gitconfig
