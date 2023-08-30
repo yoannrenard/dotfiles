@@ -28,6 +28,7 @@
 	rsup    = !git fetch upstream && git reset --hard upstream/master
 	logx    = log --graph --pretty=format:'%C(bold white)%h%Creset -%C(bold yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset' --abbrev-commit --branches
 	unstage = reset HEAD --
+	last = log -1 HEAD
 [color]
 	branch = auto
 	diff = auto
