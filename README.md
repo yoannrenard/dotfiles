@@ -3,7 +3,7 @@
 ## How to install
 
 ```bash
-$ git@github.com:yoannrenard/dotfiles.git
+$ git clone git@github.com:yoannrenard/dotfiles.git
 $ cd dotfiles
 $ make install
 ```
