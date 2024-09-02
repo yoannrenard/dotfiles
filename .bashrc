@@ -1,4 +1,4 @@
-# Symfony
+# Symfony
 alias sf="php $(find . -maxdepth 2 -mindepth 1 -name 'console' -type f | head -n 1)"
 
 
@@ -103,14 +103,20 @@ Jobs="\j"
 # This PS1 snippet was adopted from code for MAC/BSD I saw from: http://allancraig.net/index.php?option=com_content&view=article&id=108:ps1-export-command-for-git&catid=45:general&Itemid=96
 # I tweaked it to work on UBUNTU 11.04 & 11.10 plus made it mo' better
 
+# enable colored prompt for git branches
+# using parse_git_branch
+parse_git_branch() {
+ git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+
 PS1=$IBlack$Time12h$Color_Off'['$BWhite'\u@\h'$Color_Off']'$Yellow$PathShort$Color_Off'$(git branch &>/dev/null; \
 if [ $? -eq 0 ]; then \
   echo "$(echo `git status` | grep "nothing to commit" > /dev/null 2>&1; \
   if [ "$?" -eq "0" ]; then \
     # @4 - Clean repository - nothing to commit
-    echo "'$Green'"$(__git_ps1 " (%s)")"'$Color_Off'";\
+    echo "'$Green'"$(parse_git_branch " (%s)")"'$Color_Off'";\
   else \
     # @5 - Changes to working tree
-    echo "'$IRed'"$(__git_ps1 " (%s)")"'$Color_Off'";\
+    echo "'$IRed'"$(parse_git_branch " (%s)")"'$Color_Off'";\
   fi)";\
 fi)\$ '
