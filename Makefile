@@ -13,6 +13,9 @@ install: ## Install env
 	ln -s $(PWD)/.gitignore ~/.gitignore
 	cat $(PWD)/.bashrc >> ~/.bashrc
 	source ~/.bashrc
+	if [[ "Darwin" ==  $(shell uname) ]]; then \
+		cat $(PWD)/.bash_profile >> ~/.bash_profile; \
+	fi;
 	# Google container-structure-test
 	curl -LO https://storage.googleapis.com/container-structure-test/latest/container-structure-test-linux-amd64
 	chmod +x container-structure-test-linux-amd64
