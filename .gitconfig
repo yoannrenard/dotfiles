@@ -30,6 +30,7 @@
 	unstage = reset HEAD --
 	last    = log -1 HEAD
 	mwps    = push -o merge_request.create -o merge_request.merge_when_pipeline_succeeds
+	fix     = git ci -a --fixup=HEAD
 [color]
 	branch = auto
 	diff = auto
