@@ -24,13 +24,13 @@
 	authors = shortlog -sn --no-merges
 	brd     = !git branch --merged | grep -v master | xargs git branch -d
 	wip     = !git add -A && git ci -m 'WIP'
-	pr      = !sh -c 'stash pull-request $0 master'
 	rsup    = !git fetch upstream && git reset --hard upstream/master
 	logx    = log --graph --pretty=format:'%C(bold white)%h%Creset -%C(bold yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset' --abbrev-commit --branches
 	unstage = reset HEAD --
 	last    = log -1 HEAD
 	mwps    = push -o merge_request.create -o merge_request.merge_when_pipeline_succeeds
-	fix     = commit -a --fixup=HEAD
+	fix     = "!f() { git commit -a --fixup=$(git log --no-merges --pretty=format:'%H %s' | grep -v '^.* fixup!' | head -n1 | cut -d' ' -f1); }; f"
+
 [color]
 	branch = auto
 	diff = auto
