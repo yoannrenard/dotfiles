@@ -30,6 +30,7 @@
 	last    = log -1 HEAD
 	mwps    = push -o merge_request.create -o merge_request.merge_when_pipeline_succeeds
 	fix     = "!f() { git commit -a --fixup=$(git log --no-merges --pretty=format:'%H %s' | grep -v '^.* fixup!' | head -n1 | cut -d' ' -f1); }; f"
+	sync    = "!f() { git pull origin $(git rev-parse --abbrev-ref HEAD); }; f"
 
 [color]
 	branch = auto
