@@ -31,6 +31,7 @@
 	mwps    = push -o merge_request.create -o merge_request.merge_when_pipeline_succeeds
 	fix     = "!f() { git commit -a --fixup=$(git log --no-merges --pretty=format:'%H %s' | grep -v '^.* fixup!' | head -n1 | cut -d' ' -f1); }; f"
 	sync    = "!f() { git pull origin $(git rev-parse --abbrev-ref HEAD); }; f"
+	abort   = "!f() { git rebase --abort 2>/dev/null || git cherry-pick --abort 2>/dev/null || git merge --abort 2>/dev/null || git revert --abort 2>/dev/null || echo 'Nothing to abort.'; }; f"
 
 [color]
 	branch = auto
