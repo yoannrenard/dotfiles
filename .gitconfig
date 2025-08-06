@@ -62,6 +62,3 @@
 	autocorrect = 1
 [init]
 	defaultBranch = main
-
-[includeIf "gitdir:/Volumes/workspace/sogexia/"]
-	path = /Volumes/workspace/sogexia/.gitconfig
