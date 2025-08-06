@@ -62,3 +62,6 @@
 	autocorrect = 1
 [init]
 	defaultBranch = main
+
+[includeIf "gitdir:/Volumes/workspace/emeria/millenium"]
+	path = /Volumes/workspace/emeria/.gitconfig
