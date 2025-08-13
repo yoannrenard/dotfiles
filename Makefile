@@ -11,6 +11,7 @@ help:
 install: ## Install env
 	ln -s $(PWD)/.gitconfig ~/.gitconfig
 	ln -s $(PWD)/.gitignore ~/.gitignore
+	ln -s $(PWD)/.git-prompt ~/.git-prompt
 	cat $(PWD)/.bashrc >> ~/.bashrc
 	source ~/.bashrc
 	if [[ "Darwin" ==  $(shell uname) ]]; then \
