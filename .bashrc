@@ -13,7 +13,6 @@ export NVM_DIR="$HOME/.nvm"
 source ~/.git-prompt
 
 #NPM
-
 if type complete &>/dev/null; then
   _npm_completion () {
     local words cword
