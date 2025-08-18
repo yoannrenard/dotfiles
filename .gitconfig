@@ -63,5 +63,5 @@
 [init]
 	defaultBranch = main
 
-[includeIf "gitdir:/Volumes/workspace/emeria/millenium"]
+[includeIf "gitdir:/Volumes/workspace/emeria/millenium/"]
 	path = /Volumes/workspace/emeria/.gitconfig

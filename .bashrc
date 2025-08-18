@@ -1,5 +1,17 @@
-# Symfony
+# Homebrew bash-completion support (macOS ARM - Apple Silicon)
+if [ -f /opt/homebrew/etc/profile.d/bash_completion.sh ]; then
+  source /opt/homebrew/etc/profile.d/bash_completion.sh
+elif [ -f /etc/bash_completion ]; then
+  source /etc/bash_completion
+fi
+
+
+# Alias
+alias git-clean-local='git fetch -p origin && git co master && git br --merged | grep -v master | sed -e "s/.*  //g" | xargs -n 1 git br -d'
+alias git-clean-origin='git fetch -p origin && git co master && git br -r --merged | grep -v master | sed -e "s/.*  origin\///g" | xargs -n 1 git push origin --delete'
 alias sf="php $(find . -maxdepth 2 -mindepth 1 -name 'console' -type f | head -n 1)"
+alias workspace='cd /Volumes/workspace'
+
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
@@ -14,11 +26,6 @@ export LC_ALL=C
 # Set Git language to English
 # alias git='LANG=en_US git'
 # alias git='LC_ALL=en_US git'
-alias git-clean-local='git fetch -p origin && git co master && git br --merged | grep -v master | sed -e "s/.*  //g" | xargs -n 1 git br -d'
-alias git-clean-origin='git fetch -p origin && git co master && git br -r --merged | grep -v master | sed -e "s/.*  origin\///g" | xargs -n 1 git push origin --delete'
-
-# docker
-alias workspace='cd /Volumes/workspace'
 
 #:source ~/.git-prompt.sh
 #  Customize BASH PS1 prompt to show current GIT repository and branch.
