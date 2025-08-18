@@ -1,5 +1,6 @@
 # Set language to English
-export LC_ALL=C
+export LC_ALL=C.UTF-8
+export PATH="$HOME/.local/bin:$PATH"
 
 alias sf="php $(find . -maxdepth 2 -mindepth 1 -name 'console' -type f | head -n 1)"
 alias workspace='cd /Volumes/workspace'
@@ -11,6 +12,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion (node is in path now)
 
 source ~/.git-prompt
+source ~/.npm-prompt
 
 #NPM
 if type complete &>/dev/null; then
