@@ -3,6 +3,14 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion (node is in path now)
 
+###-begin-npm-completion-###
+#
+# npm command completion script
+#
+# Installation: npm completion >> ~/.bashrc  (or ~/.zshrc)
+# Or, maybe: npm completion > /usr/local/etc/bash_completion.d/npm
+#
+
 if type complete &>/dev/null; then
   _npm_completion () {
     local words cword
@@ -63,3 +71,4 @@ elif type compctl &>/dev/null; then
   }
   compctl -K _npm_completion npm
 fi
+###-end-npm-completion-###
