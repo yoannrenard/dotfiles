@@ -78,3 +78,5 @@ fi
 ###-end-npm-completion-###
 
 source ~/completion-for-pnpm.bash
+
+alias p='function _p(){ for arg in "$@"; do pnpm "$arg" && echo; done; }; _p'
