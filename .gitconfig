@@ -49,6 +49,15 @@
 	diff = auto
 	interactive = auto
 	status = auto
+	ui = true
+[color "diff"]
+	meta = yellow bold
+	old = red bold
+	new = green bold
+[color "status"]
+	added = green bold
+	changed = yellow
+	untracked = cyan
 [pull]
 	rebase = true
 [push]
