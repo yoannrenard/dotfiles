@@ -6,11 +6,6 @@ alias sf="php $(find . -maxdepth 2 -mindepth 1 -name 'console' -type f | head -n
 alias workspace='cd /Volumes/workspace'
 alias ll="ls -la"
 
-# nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion (node is in path now)
-
 source ~/.git-prompt
 source ~/.npm-prompt
 
