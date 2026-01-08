@@ -9,7 +9,12 @@ help:
 ## Setup
 ##---------------------------------------------------------------------------
 install_claude: ## Install Claude
+	echo "Sources: "
+	echo " - https://github.com/ComposioHQ/awesome-claude-skills?tab=readme-ov-file"
+	echo "Skills:"
+	echo " - using-git-worktrees"
 	ln -sF $(PWD)/.claude/skills/using-git-worktrees ~/.claude/skills/using-git-worktrees
+	echo " - software-architecture"
 	ln -sF $(PWD)/.claude/skills/software-architecture ~/.claude/skills/software-architecture
 .PHONY:  install_claude
 .SILENT: install_claude
