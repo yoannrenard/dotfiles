@@ -17,32 +17,53 @@
 	br      = branch
 	co      = checkout
 	cp      = cherry-pick
+    # cat: displays the content of a git object ('cat-file -p')
 	cat     = cat-file -p
+    # lga: pretty log graph with short date and author (name + date)
 	lga     = log --graph --pretty=tformat:'%Cred%h%Creset -%C(yellow)%d%Creset%s %Cgreen(%an %cd)%Creset' --abbrev-commit --date=short
+    # lg: pretty log graph with relative date and author
 	lg      = log --graph --pretty=tformat:'%Cred%h%Creset -%C(yellow)%d%Creset%s %Cgreen(%an %cr)%Creset' --abbrev-commit --date=relative
+    # ll: pretty log with stats, decorations, and author name
 	ll      = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+    # authors: lists all authors and commit count (excluding merges)
 	authors = shortlog -sn --no-merges
+    # brd: deletes all merged branches except master
 	brd     = !git branch --merged | grep -v master | xargs git branch -d
+    # wip: adds all changes and creates a 'WIP' commit
 	wip     = !git add -A && git ci -m 'WIP'
+    # rsup: resets current branch hard to upstream/master
 	rsup    = !git fetch upstream && git reset --hard upstream/master
 	logx    = log --graph --pretty=format:'%C(bold white)%h%Creset -%C(bold yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset' --abbrev-commit --branches
+    # unstage: removes files from the index (unstages them)
 	unstage = reset HEAD --
+    # last: shows the latest commit
 	last    = log -1 HEAD
+    # mwps: push and create a merge request (GitLab), auto merge when pipeline succeeds
 	mwps    = push -o merge_request.create -o merge_request.merge_when_pipeline_succeeds
+    # fix: creates a --fixup commit for the relevant commit
 	fix     = "!f() { git commit -a --fixup=$(git log --no-merges --pretty=format:'%H %s' | grep -v '^.* fixup!' | head -n1 | cut -d' ' -f1); }; f"
+    # sync: updates the current branch from origin
 	sync    = "!f() { git pull origin $(git rev-parse --abbrev-ref HEAD); }; f"
 	abort   = "!f() { git rebase --abort 2>/dev/null || git cherry-pick --abort 2>/dev/null || git merge --abort 2>/dev/null || git revert --abort 2>/dev/null || echo 'Nothing to abort.'; }; f"
+    # continue: resumes an interrupted rebase, cherry-pick, merge, or revert
     continue = "!f() { git rebase --continue 2>/dev/null || git cherry-pick --continue 2>/dev/null || git merge --continue 2>/dev/null || git revert --continue 2>/dev/null || echo 'Nothing to continue.'; }; f"
+    # die: fully resets working directory (unstage all, restore, force clean)
 	die     = "!f() { git restore --staged . && git restore . && git clean -df; }; f"
+    # self: starts an interactive rebase on the last non-fixup commit
     self    = "!f() { \
     base=$(git log --grep='^fixup!' --invert-grep --pretty=format:'%H' | head -n1); \
     if [ -z \"$base\" ]; then echo 'No base commit found'; exit 1; fi; \
     git rebase -i $base^; \
   }; f"
+    # pushc: pushes and creates a merge request with minimal description (GitLab)
     pushc   = push -o merge_request.create -o merge_request.description="---"
-    wta     = "!f() { git worktree add -b "$1" "../$1"; }; f"
-    wtr     = "!f() { git worktree remove "../$1"; }; f"
+    # wta: creates a new worktree for a new branch
+    wta     = "!f() { git worktree add -b \"$1\" \"../$1\"; }; f"
+    # wtr: removes a worktree for branch $1
+    wtr     = "!f() { git worktree remove \"../$1\"; }; f"
+    # wtl: lists all worktrees
     wtl     = "!f() { git worktree list; }; f"
+    # wtpr: prunes obsolete git worktrees
     wtpr    = "!f() { git worktree prune; }; f"
 
 [color]
