@@ -18,6 +18,8 @@ install_claude: ## Install Claude
 	ln -sF $(PWD)/.claude/skills/software-architecture ~/.claude/skills/software-architecture
 	echo " - test-driven-development"
 	ln -sF $(PWD)/.claude/skills/test-driven-development ~/.claude/skills/test-driven-development
+	echo " - creating-a-pdata"
+	ln -sF $(PWD)/.claude/skills/creating-a-pdata ~/.claude/skills/creating-a-pdata
 .PHONY:  install_claude
 .SILENT: install_claude
 
