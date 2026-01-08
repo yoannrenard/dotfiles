@@ -16,6 +16,8 @@ install_claude: ## Install Claude
 	ln -sF $(PWD)/.claude/skills/using-git-worktrees ~/.claude/skills/using-git-worktrees
 	echo " - software-architecture"
 	ln -sF $(PWD)/.claude/skills/software-architecture ~/.claude/skills/software-architecture
+	echo " - test-driven-development"
+	ln -sF $(PWD)/.claude/skills/test-driven-development ~/.claude/skills/test-driven-development
 .PHONY:  install_claude
 .SILENT: install_claude
 
