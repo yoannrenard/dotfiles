@@ -8,6 +8,11 @@ help:
 ##
 ## Setup
 ##---------------------------------------------------------------------------
+install_claude: ## Install Claude
+	ln -sF $(PWD)/.claude/skills/using-git-worktrees ~/.claude/skills/using-git-worktrees
+.PHONY:  install_claude
+.SILENT: install_claude
+
 install: ## Install env
 	ln -s $(PWD)/.gitconfig ~/.gitconfig
 	ln -s $(PWD)/.gitignore ~/.gitignore
