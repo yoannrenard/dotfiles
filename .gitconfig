@@ -39,6 +39,7 @@
     if [ -z \"$base\" ]; then echo 'No base commit found'; exit 1; fi; \
     git rebase -i $base^; \
   }; f"
+    pushc   = push -o merge_request.create -o merge_request.description="---"
     wta     = "!f() { git worktree add -b "$1" "../$1"; }; f"
     wtr     = "!f() { git worktree remove "../$1"; }; f"
     wtl     = "!f() { git worktree list; }; f"
