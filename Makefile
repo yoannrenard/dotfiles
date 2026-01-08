@@ -10,6 +10,7 @@ help:
 ##---------------------------------------------------------------------------
 install_claude: ## Install Claude
 	ln -sF $(PWD)/.claude/skills/using-git-worktrees ~/.claude/skills/using-git-worktrees
+	ln -sF $(PWD)/.claude/skills/software-architecture ~/.claude/skills/software-architecture
 .PHONY:  install_claude
 .SILENT: install_claude
 
