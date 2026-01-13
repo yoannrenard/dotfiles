@@ -65,6 +65,19 @@
     wtl     = "!f() { git worktree list; }; f"
     # wtpr: prunes obsolete git worktrees
     wtpr    = "!f() { git worktree prune; }; f"
+    # pushy: pushes to origin, asks for confirmation before force-with-lease on reject
+	pushy    = "!f() { \
+		git push origin \"$@\" || { \
+			echo ''; \
+			echo 'Push rejected. Do you want to force push with --force-with-lease? (Y/n)'; \
+			read -r response; \
+			if [ \"$response\" = 'n' ] || [ \"$response\" = 'N' ]; then \
+				return 1; \
+			else \
+				git push origin --force-with-lease \"$@\"; \
+			fi; \
+		}; \
+	}; f"
 
 [color]
 	branch = auto
