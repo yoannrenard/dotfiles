@@ -56,7 +56,7 @@
     git rebase -i $base^; \
   }; f"
     # pushc: pushes and creates a merge request with minimal description (GitLab)
-    pushc   = push -o merge_request.create -o merge_request.description="---"
+    pushc   = push -o merge_request.create -o merge_request.description="😎"
     # wta: creates a new worktree for a new branch
     wta     = "!f() { git worktree add -b \"$1\" \"../$1\"; }; f"
     # wtr: removes a worktree for branch $1
