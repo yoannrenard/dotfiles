@@ -29,3 +29,18 @@ install_bat: ## Install Bat (A cat(1) clone with wings.)
 	source ~/.bashrc
 .PHONY:  install_bat
 .SILENT: install_bat
+
+install_fish: ## Install Fish shell configuration
+	@echo "Installing Fish configuration..."
+	mkdir -p ~/.config/fish/conf.d ~/.config/fish/functions
+	ln -sf $(PWD)/fish/config.fish ~/.config/fish/config.fish
+	ln -sf $(PWD)/fish/conf.d/00-nvm-config.fish ~/.config/fish/conf.d/00-nvm-config.fish
+	ln -sf $(PWD)/fish/functions/fish_prompt.fish ~/.config/fish/functions/fish_prompt.fish
+	@echo "Installing Fisher plugin manager..."
+	fish -c "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher"
+	@echo "Installing nvm.fish..."
+	fish -c "fisher install jorgebucaran/nvm.fish"
+	@echo "Installing Node.js via nvm.fish..."
+	fish -c "nvm install 22"
+	@echo "Fish configuration installed! Run 'fish' to start using it."
+.PHONY:  install_fish
