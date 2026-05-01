@@ -65,6 +65,8 @@
     wtl     = "!f() { git worktree list; }; f"
     # wtpr: prunes obsolete git worktrees
     wtpr    = "!f() { git worktree prune; }; f"
+    # pusho: shortcut for 'git push o' (typo-friendly alias)
+	pusho   = push o
     # pushy: pushes to origin, asks for confirmation before force-with-lease on reject
 	pushy    = "!f() { \
 		git push origin \"$@\" || { \
