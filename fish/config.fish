@@ -17,6 +17,11 @@ if status is-interactive
     alias myra 'duck ra ls --self -l'
 
     # ═══════════════════════════════════════════════════════════════════════════
+    # Alias Python
+    # ═══════════════════════════════════════════════════════════════════════════
+    alias python 'python3'
+
+    # ═══════════════════════════════════════════════════════════════════════════
     # Alias Git
     # ═══════════════════════════════════════════════════════════════════════════
     alias git-clean-local 'git fetch -p origin && git checkout master && git branch --merged | grep -v master | xargs -n 1 git branch -d'
