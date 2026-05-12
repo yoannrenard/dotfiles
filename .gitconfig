@@ -107,3 +107,9 @@
 
 [includeIf "gitdir:/Volumes/workspace/emeria/millenium/"]
 	path = /Volumes/workspace/emeria/.gitconfig
+[includeIf "gitdir:/Volumes/workspace/emeria/millenium2/"]
+	path = /Volumes/workspace/emeria/.gitconfig
+[includeIf "gitdir:/Volumes/workspace/emeria/millenium3/"]
+	path = /Volumes/workspace/emeria/.gitconfig
+[includeIf "gitdir:/Volumes/workspace/emeria/fox/"]
+	path = /Volumes/workspace/emeria/.gitconfig
