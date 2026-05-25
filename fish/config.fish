@@ -6,6 +6,7 @@ if status is-interactive
     set -gx RA_NAME yoann
 
     # PATH
+    fish_add_path -g /opt/homebrew/bin
     fish_add_path -g $HOME/.local/bin
     fish_add_path -g $HOME/Library/pnpm
 
