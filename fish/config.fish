@@ -72,3 +72,7 @@ function make
     echo "Aucun Makefile trouvé dans les dossiers parents." >&2
     return 1
 end
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
