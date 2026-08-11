@@ -41,7 +41,7 @@ install_fish: ## Install Fish shell configuration
 	@echo "Installing nvm.fish..."
 	fish -c "fisher install jorgebucaran/nvm.fish"
 	@echo "Installing Node.js via nvm.fish..."
-	fish -c "nvm install 24.19.0"
+	fish -c "nvm install 24.18.1"
 	$(MAKE) install_fish_local
 	@echo "Fish configuration installed! Run 'fish' to start using it."
 .PHONY:  install_fish
