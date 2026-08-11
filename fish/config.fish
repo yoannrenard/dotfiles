@@ -77,3 +77,8 @@ end
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
+
+# Anything belonging to a single machine — work paths, secrets, per-machine
+# tooling — goes in ~/.config/fish/conf.d/99-local.fish, which fish sources
+# automatically and git never sees. See fish/conf.d/99-local.fish.example.
+

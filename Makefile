@@ -41,6 +41,20 @@ install_fish: ## Install Fish shell configuration
 	@echo "Installing nvm.fish..."
 	fish -c "fisher install jorgebucaran/nvm.fish"
 	@echo "Installing Node.js via nvm.fish..."
-	fish -c "nvm install 22"
+	fish -c "nvm install 24.19.0"
+	$(MAKE) install_fish_local
 	@echo "Fish configuration installed! Run 'fish' to start using it."
 .PHONY:  install_fish
+
+install_fish_local: ## Seed the untracked machine-local fish config
+	# A real file, never a symlink into this repo: that is what keeps machine
+	# -specific settings and secrets out of version control. Never overwritten,
+	# so re-running install cannot discard a machine's own configuration.
+	@mkdir -p ~/.config/fish/conf.d
+	@if [ -e ~/.config/fish/conf.d/99-local.fish ]; then \
+		echo "99-local.fish already exists — left untouched."; \
+	else \
+		cp $(PWD)/fish/conf.d/99-local.fish.example ~/.config/fish/conf.d/99-local.fish; \
+		echo "Created ~/.config/fish/conf.d/99-local.fish — edit it for this machine."; \
+	fi
+.PHONY:  install_fish_local

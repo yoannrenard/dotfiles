@@ -1,0 +1,21 @@
+# Machine-local configuration — NOT tracked by git.
+#
+# Copy to ~/.config/fish/conf.d/99-local.fish (a real file, not a symlink
+# into this repo — that is what keeps it out of version control) and edit
+# freely. fish sources every .fish in conf.d, and the 99 prefix runs it last,
+# so anything here overrides the shared configuration.
+#
+# For what belongs on one machine only: work paths, per-machine tools,
+# aliases you do not want to share.
+
+# fish_add_path ~/some/machine/specific/bin
+
+# Secrets do not belong in this file either — an untracked file is still
+# plain text on disk, readable by any process running as you. Keep them in
+# the Keychain and read them out at startup:
+#
+#   security add-generic-password -a "$USER" -s GITLAB_TOKEN -w
+#
+# then, here:
+#
+#   set -gx GITLAB_TOKEN (security find-generic-password -a "$USER" -s GITLAB_TOKEN -w)

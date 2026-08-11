@@ -3,3 +3,7 @@
 .cursor
 /build/
 /.worktrees/
+
+# Machine-local, never shared. See fish/conf.d/99-local.fish.example.
+fish/conf.d/99-local.fish
+*.local.fish
