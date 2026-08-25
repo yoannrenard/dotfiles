@@ -82,3 +82,17 @@ set --export PATH $BUN_INSTALL/bin $PATH
 # tooling — goes in ~/.config/fish/conf.d/99-local.fish, which fish sources
 # automatically and git never sees. See fish/conf.d/99-local.fish.example.
 
+# nvm doit gagner sur Homebrew.
+#
+# nvm.fish (conf.d/) place son bin dans $PATH, mais config.fish est chargé
+# APRÈS conf.d/ : le `fish_add_path -g /opt/homebrew/bin` plus haut repasse
+# devant, et un `brew install node` tiré par une dépendance (mongosh) devient
+# alors le node du shell — pas celui de nvm_default_version.
+#
+# On re-pousse donc le bin nvm en tête une fois tout le PATH construit.
+if set -q nvm_data; and set -q nvm_current_version
+    set -l _nvm_bin $nvm_data/$nvm_current_version/bin
+    if test -d $_nvm_bin
+        set --export PATH $_nvm_bin (string match -v $_nvm_bin $PATH)
+    end
+end
