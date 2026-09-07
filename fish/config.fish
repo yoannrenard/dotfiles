@@ -9,6 +9,8 @@ if status is-interactive
     fish_add_path -g /opt/homebrew/bin
     fish_add_path -g $HOME/.local/bin
     fish_add_path -g $HOME/Library/pnpm
+    # Docker Desktop
+    fish_add_path -g $HOME/.docker/bin
 
     # ═══════════════════════════════════════════════════════════════════════════
     # Alias généraux
