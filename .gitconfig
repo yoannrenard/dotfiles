@@ -111,3 +111,8 @@
 	path = /Volumes/workspace/emeria/.gitconfig
 [includeIf "gitdir:/Volumes/workspace/emeria/fox/"]
 	path = /Volumes/workspace/emeria/.gitconfig
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
