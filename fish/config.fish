@@ -18,7 +18,7 @@ if status is-interactive
     alias workspace 'cd /Volumes/workspace'
     alias ll 'ls -la'
     alias myra 'duck ra ls --self -l'
-    alias claudeDSP 'claude --dangerously-skip-permissions'
+    alias cc 'claude --dangerously-skip-permissions'
 
     # ═══════════════════════════════════════════════════════════════════════════
     # Alias Git
