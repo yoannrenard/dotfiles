@@ -28,6 +28,7 @@ make install_fish # symlinks fish/ configs, installs Fisher + nvm.fish + Node 22
 
 ## Conventions
 
+- **Third-party installers append bash syntax to `fish/config.fish`.** Docker Desktop, and others like it, write an `export PATH="$PATH:..."` line at the top of the file. This happens to work in Fish but is not idiomatic and sits outside the PATH block. Rewrite such lines as `fish_add_path -g <dir>` grouped with the other `fish_add_path` calls, rather than leaving them where the installer put them.
 - Comments in shell/fish config are written in **French**; keep that convention when editing those files. Documentation and git-alias comments are in English.
 - Commit messages follow Conventional Commits with a scope, e.g. `chore(fish): …`, `feat(fish): …`, `chore(gi): …` (gi = gitignore/gitconfig).
 - The workflow is **pnpm + Nx**, not npm. `.npm-prompt` (Bash) loads nvm, adds npm + pnpm shell completion (`completion-for-pnpm.bash`), and defines `p` as a pnpm wrapper; the Fish side has the `lint`/`build`/`ts`/`nx_test`/`all` Nx aliases.
