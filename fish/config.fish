@@ -22,6 +22,8 @@ if status is-interactive
     # Session pilotable depuis l'app Claude sur mobile ; caffeinate empêche la
     # veille du Mac, qui suspendrait la session. Usage : cc-remote highlite
     alias cc-remote 'caffeinate -dims claude --chrome --dangerously-skip-permissions --remote-control'
+    # Session isolée dans un nouveau worktree git. Usage : cc-worktree fix-menu
+    alias cc-worktree 'claude --chrome --dangerously-skip-permissions --worktree'
 
     # ═══════════════════════════════════════════════════════════════════════════
     # Alias Git
