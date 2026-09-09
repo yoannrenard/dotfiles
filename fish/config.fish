@@ -19,6 +19,9 @@ if status is-interactive
     alias ll 'ls -la'
     alias myra 'duck ra ls --self -l'
     alias cc 'claude --chrome --dangerously-skip-permissions'
+    # Session pilotable depuis l'app Claude sur mobile ; caffeinate empêche la
+    # veille du Mac, qui suspendrait la session. Usage : cc-remote highlite
+    alias cc-remote 'caffeinate -dims claude --chrome --dangerously-skip-permissions --remote-control'
 
     # ═══════════════════════════════════════════════════════════════════════════
     # Alias Git
