@@ -1,5 +1,5 @@
 # Configuration nvm.fish - chargé avant nvm.fish
-set --global nvm_default_version 24.18.1
+set --global nvm_default_version 26.13.1
 
 # Bascule automatique sur la version d'un projet en entrant dans son dossier.
 #
